@@ -1,0 +1,29 @@
+from operator import length_hint
+texto = input('Ingresa una frase: ')
+lista = []
+lista.append(input('Ingresa una letra: ').lower())
+lista.append(input('Ingresa segunda letra: ').lower())
+lista.append(input('Ingresa tercera letra: ').lower())
+cantidad_letras = texto.count(lista[0])
+cantidad_letras1 = texto.count(lista[1])
+cantidad_letras2 = texto.count(lista[2])
+
+print ('El texto elegido es ' ,texto)
+print(f'La cantidad de veces que la letra {lista[0]} se repite es {cantidad_letras}')
+print(f'La cantidad de veces que la letra {lista[1]} se repite es {cantidad_letras1}')
+print(f'La cantidad de veces que la letra {lista[2]} se repite es {cantidad_letras2}')
+print('\n')
+print('CANTIDAD DE PALABRAS')
+palabras = texto.split()
+print(f'se encontraron la cantidad de {len(palabras)}')
+primeraletra = texto[0]
+ultimaletra = texto[-1]
+
+print(f'La letra inicial es {primeraletra} y la letra final es {ultimaletra}')
+palabras.reverse()
+textoinvertido = ' '.join(palabras)
+print(f'Tu texto invertido es {textoinvertido}')
+
+buscar = 'python' in texto
+dic = {True:'si', False:'no'}
+print(f'La palabra python {dic[buscar]} se encuentra en el txto')
