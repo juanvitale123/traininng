@@ -1,0 +1,26 @@
+import random
+
+nombre = input("¿Cuál es tu nombre? ")
+print(f"¡Hola {nombre}! Tienes 8 intentos para adivinar un número entre 1 y 100")
+
+numero_secreto = random.randint(1, 100)
+intentos = 0
+
+while intentos < 8:
+    numero = int(input("Ingresa tu número: "))
+    intentos += 1
+
+    if numero < 1 or numero > 100:
+        print("Por favor, elige un número entre 1 y 100.")
+    elif numero == numero_secreto:
+        print(f"¡Felicidades! Has adivinado el número en {intentos} intentos.")
+        break
+    else:
+        print("¡Incorrecto! Intenta nuevamente.")
+        if numero < numero_secreto:
+            print("El número es mayor.")
+        else:
+            print("El número es menor.")
+
+if intentos == 8:
+    print(f"Lo siento, se te acabaron los intentos. El número era {numero_secreto}.")
