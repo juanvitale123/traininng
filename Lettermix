@@ -1,0 +1,23 @@
+def palabras_unicas_sin_set(palabra):
+    """Encuentra las letras únicas en una palabra sin usar set.
+
+  Args:
+      palabra: La palabra a analizar.
+
+  Returns:
+      Una lista ordenada con las letras únicas de la palabra.
+  """
+
+    palabra = palabra.lower()
+    letras_unicas = []
+
+    for letra in palabra:
+        if letra not in letras_unicas:
+            letras_unicas.append(letra)
+
+    return sorted(letras_unicas)
+
+
+palabra = 'alejandro'
+resultado = palabras_unicas_sin_set(palabra)
+print(resultado)
