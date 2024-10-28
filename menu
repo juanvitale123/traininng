@@ -1,0 +1,47 @@
+import os
+
+def mostrar_menu_recetas():
+    ruta_recetas = os.getcwd()
+    archivos_recetas = os.listdir(ruta_recetas)
+    print("¡Bienvenido al organizador de recetas!")
+    print(f"La carpeta de recetas se encuentra en: {ruta_recetas}")
+    print(f'Las recetas que tenemos son: {archivos_recetas}')
+    print("\nOpciones:")
+    print("1. Ver todas las recetas")
+    print("2. Buscar una receta")
+    print("3. Agregar una nueva receta")
+    print("4. Salir")
+
+    opcion = input("Selecciona una opción (1-4): ")
+
+    if opcion == "1":
+        print("Mostrando todas las recetas:")
+        for receta in archivos_recetas:
+            print(receta)
+    elif opcion == "2":
+        def buscar_receta():
+            ruta_archivo = os.path.abspath('Entrecot al Malbec.txt')
+            indicador_buscar = input("Selecciona que tipo de receta quieres\t")
+            if indicador_buscar == "carnes":
+                ruta_carpeta = "C:\\Users\\juani\\PycharmProjects\\pythonProject3\\Recetas\\Recetas\\carnes"
+                contenido = os.listdir(ruta_carpeta)
+                print(f"{contenido} de la carpeta 'carnes':")
+                eleccion_carnes = input()
+                if eleccion_carnes == 'entrecot':
+                    archivo_carnes = open(ruta_carpeta,'r')
+                    contenido_carnes = archivo_carnes.read()
+                    print(contenido_carnes)
+                    archivo_carnes.close
+        buscar_receta()
+    elif opcion == "3":
+        def crear_directorio(ruta):
+            if not os.path.exists(ruta):
+                os.makedirs(ruta)
+                print(f"Directorio '{ruta}' creado exitosamente.")
+            else:
+                print(f"El directorio '{ruta}' ya existe.")
+    elif opcion == "4":
+        print("¡Hasta luego!")
+    else:
+        print("Opción inválida. Por favor, elige una opción del 1 al 4.")
+mostrar_menu_recetas()
